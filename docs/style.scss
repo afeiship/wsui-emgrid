@@ -1,0 +1,17 @@
+@import "../src/index.scss";
+
+.wsui-g {
+  outline: 1px solid lightblue;
+}
+
+.is-item {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+}
+
+.container {
+  border:1px solid blue;
+  width: 1200px;
+  margin: 20px auto;
+}

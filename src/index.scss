@@ -1,0 +1,28 @@
+/*wsui-emgrid Start*/
+@import "./grids/var";
+@import "./grids/fns";
+@import "./grids/mixins";
+
+// $sm-breakpoint: 35.5em !default;
+// $md-breakpoint: 48em !default;
+// $lg-breakpoint: 64em !default;
+// $xl-breakpoint: 80em !default;
+
+.wsui-g, .wsui-u_ {
+  margin: -0.5em;
+  overflow: hidden;
+}
+
+.wsui-u_ > *,
+.wsui-u {
+  box-sizing: border-box;
+  float: left;
+  margin: 0.5em;
+}
+
+@include grid(".ws", 24, "u");
+@include grid(".sm", 24, "u", 35.5em);
+@include grid(".md", 24, "u", 48em);
+@include grid(".lg", 24, "u", 64em);
+@include grid(".xl", 24, "u", 80em);
+/*wsui-emgrid End*/

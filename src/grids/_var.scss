@@ -1,0 +1,9 @@
+$wsui-emgrid-options: (
+  prefix: ".wsui",
+  gap: 10px,
+  responsive: (
+    sm: 567px,
+    md: 767px,
+    lg: 1023px,
+  ),
+) !default;
