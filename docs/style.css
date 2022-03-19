@@ -1,5 +1,7 @@
 /*wsui-emgrid Start*/
-.wsui-g, .wsui-u_ {
+/* prettier-ignore */
+.wsui-g,
+.wsui-u_ {
   margin: -0.5em;
   overflow: hidden;
 }

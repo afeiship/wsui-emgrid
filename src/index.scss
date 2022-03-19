@@ -3,26 +3,35 @@
 @import "./grids/fns";
 @import "./grids/mixins";
 
-// $sm-breakpoint: 35.5em !default;
-// $md-breakpoint: 48em !default;
-// $lg-breakpoint: 64em !default;
-// $xl-breakpoint: 80em !default;
 
-.wsui-g, .wsui-u_ {
+/* prettier-ignore */
+$wsui-responsive-list: map-get($map: $wsui-emgrid-options, $key: 'responsive');
+$wsui-responsive-list-count: map-get($map: $wsui-emgrid-options, $key: 'count');
+$wsui-responsive-list-prefix: map-get($map: $wsui-emgrid-options, $key: 'prefix');
+
+#{$wsui-responsive-list-prefix}-g,
+#{$wsui-responsive-list-prefix}-u_ {
   margin: -0.5em;
   overflow: hidden;
 }
 
-.wsui-u_ > *,
-.wsui-u {
+#{$wsui-responsive-list-prefix}-u_ > *,
+#{$wsui-responsive-list-prefix}-u {
   box-sizing: border-box;
   float: left;
   margin: 0.5em;
 }
 
 @include grid(".ws", 24, "u");
-@include grid(".sm", 24, "u", 35.5em);
-@include grid(".md", 24, "u", 48em);
-@include grid(".lg", 24, "u", 64em);
-@include grid(".xl", 24, "u", 80em);
+
+@each $key, $value in $wsui-responsive-list {
+  $prefix: unquote($string: ".#{$key}");
+  @include grid( $prefix, $wsui-responsive-list-count, "u", $value);
+}
+
+// @include grid(".sm", 24, "u", 35.5em);
+// @include grid(".md", 24, "u", 48em);
+// @include grid(".lg", 24, "u", 64em);
+// @include grid(".xl", 24, "u", 80em);
+
 /*wsui-emgrid End*/
