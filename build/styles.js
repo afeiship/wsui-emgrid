@@ -21,4 +21,6 @@
   gulp.task('styles:sass', function () {
     return gulp.src('src/**/*.scss').pipe(gulp.dest('dist'));
   });
+
+  gulp.task('styles', gulp.parallel(['styles:sass', 'styles:css']));
 })();

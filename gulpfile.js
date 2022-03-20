@@ -10,8 +10,5 @@
     require('./build/' + file);
   });
 
-  gulp.task(
-    'default',
-    gulp.series(['clean', 'styles:sass', 'styles:css', 'docs'])
-  );
+  gulp.task('default', gulp.series(['clean', 'styles', 'docs']));
 })();
