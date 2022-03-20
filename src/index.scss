@@ -22,7 +22,7 @@ $wsui-responsive-list-prefix: map-get($map: $wsui-emgrid-options, $key: 'prefix'
   margin: 0.5em;
 }
 
-@include grid(".ws", 24, "u");
+@include grid(".ws", $wsui-responsive-list-count, "u");
 
 @each $key, $value in $wsui-responsive-list {
   $prefix: unquote($string: ".#{$key}");
