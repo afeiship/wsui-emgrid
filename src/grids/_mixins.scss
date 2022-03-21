@@ -1,24 +1,15 @@
 @mixin grid-item($grid-prefix, $value, $grid-count) {
   $percent: percentage($value/$grid-count);
   $prefix: #{$grid-prefix};
-  $cls-name: #{$prefix}-#{$value}-#{$grid-count};
-  $num: $grid-count/$value;
+  $cls-name: #{$prefix}#{$value};
 
   #{$cls-name}_ > *,
   #{$cls-name} {
     width: calc(#{$percent} - 1em);
   }
-
-  @if is-int($num) {
-    $cls-name2: #{$prefix}#{$num};
-    #{$cls-name2}_ > *,
-    #{$cls-name2} {
-      width: calc(#{$percent} - 1em);
-    }
-  }
 }
 
-@mixin grid($grid-prefix: ".col", $grid-count: 24, $min-width: auto) {
+@mixin grid($grid-prefix: ".col", $grid-count: 12, $min-width: auto) {
   @if $min-width != auto {
     @media screen and (min-width: $min-width) {
       @for $value from 1 through $grid-count {
