@@ -4,28 +4,28 @@
 
 
 /* prettier-ignore */
-$wsui-responsive-list: map-get($map: $wsui-emgrid-options, $key: 'responsive');
-$wsui-responsive-list-count: map-get($map: $wsui-emgrid-options, $key: 'count');
-$wsui-responsive-list-prefix: map-get($map: $wsui-emgrid-options, $key: 'prefix');
+$wsui-emgrid: map-get($map: $wsui-emgrid-options, $key: 'responsive');
+$wsui-emgrid-count: map-get($map: $wsui-emgrid-options, $key: 'count');
+$wsui-emgrid-prefix: map-get($map: $wsui-emgrid-options, $key: 'prefix');
 
-#{$wsui-responsive-list-prefix}-g,
-#{$wsui-responsive-list-prefix}-u_ {
+#{$wsui-emgrid-prefix}-g,
+#{$wsui-emgrid-prefix}-u_ {
   margin: -0.5em;
   overflow: hidden;
 }
 
-#{$wsui-responsive-list-prefix}-u_ > *,
-#{$wsui-responsive-list-prefix}-u {
+#{$wsui-emgrid-prefix}-u_ > *,
+#{$wsui-emgrid-prefix}-u {
   box-sizing: border-box;
   float: left;
   margin: 0.5em;
 }
 
-@include grid(".col", $wsui-responsive-list-count);
+@include grid(".col", $wsui-emgrid-count);
 
-@each $key, $value in $wsui-responsive-list {
+@each $key, $value in $wsui-emgrid {
   $prefix: unquote($string: ".#{$key}");
-  @include grid( $prefix, $wsui-responsive-list-count, $value);
+  @include grid( $prefix, $wsui-emgrid-count, $value);
 }
 
 // @include grid(".sm", 24, "u", 35.5em);
